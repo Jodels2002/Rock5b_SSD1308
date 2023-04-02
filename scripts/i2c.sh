@@ -42,7 +42,7 @@ GREY='\033[1;30m'
 
 
  clear 
-if [ ! -d /opt/OLED/images/ ]; then
+if [ ! -f /opt/OLED/images/banana.gif ]; then
 
 (crontab -l 2>/dev/null; echo "*/3 * * * * /usr/local/bin/loop.sh") | crontab -
   
