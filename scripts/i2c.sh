@@ -99,6 +99,7 @@ fi
        mkdir /opt/OLED/images
 
       
+       
        cp -rf  ~/luma.examples/examples/fonts /opt/OLED/
        cp -rf  ~/luma.examples/examples/images /opt/OLED/
        cp -rf  ~/luma.examples/examples/hotspot /opt/OLED/
