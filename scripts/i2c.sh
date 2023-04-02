@@ -99,10 +99,9 @@ fi
       
        cp -rf  ~/luma.examples/examples/fonts /opt/OLED/
        cp -rf  ~/luma.examples/examples/images /opt/OLED/
-       cp -rf  ~/luma.examples/examples/images /opt/OLED/
        cp -rf  ~/luma.examples/examples/hotspot /opt/OLED/
        cp -rf /opt/Rock5b_SSD1308/OLED/* /opt/OLED/
-       sudo cp -rf /opt/Rock5b_SSD1308/fonts/* /usr/share/fonts/truetype/
+       sudo cp -rf /opt/OLED/fonts/* /usr/share/fonts/truetype/
        
 
 
