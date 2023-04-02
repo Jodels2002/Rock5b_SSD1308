@@ -33,7 +33,7 @@ alien1 = [0x4C, 0x1A, 0xB6, 0x5F, 0x5F, 0xB6, 0x1A, 0x4C]
 alien2 = [0x18, 0xFD, 0xA6, 0x3C, 0x3C, 0xA6, 0xFD, 0x18]
 alien3 = [0xFC, 0x98, 0x35, 0x7E, 0x7E, 0x35, 0x98, 0xFC]
 ARMY_SIZE_ROWS = 2
-ARMY_SIZE_COLS = 6
+ARMY_SIZE_COLS = 7
 
 
 class bullet(object):
@@ -220,8 +220,9 @@ if __name__ == '__main__':
         while not army.invaded and army.size() > 0:
             with regulator:
                 with canvas(device) as draw:
-                    draw.line((0, 61, 95, 61), fill="white")
-                    draw.line((0, 63, 95, 63), fill="white")
+                    draw.line((0, 61, 128, 61), fill="white")
+                    draw.line((10, 62, 128, 52), fill="white")
+                    draw.line((0, 63, 128, 63), fill="white")
 
                     ai_logic_shoot(army, plyr)
                     ai_logic_move(army, plyr, rows)
