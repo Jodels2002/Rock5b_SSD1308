@@ -19,7 +19,7 @@ GREY='\033[1;30m'
       echo "installing  ... "
     
     if [ ! -d /opt/OLED/ ]; then 
-         
+      sudo rm -rf /opt/OLED
        mkdir /opt/OLED
        mkdir /opt/OLED/images
        mkdir /opt/OLED/fonts
