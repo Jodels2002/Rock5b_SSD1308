@@ -44,7 +44,8 @@ fi
       echo -e "$BLUE "
       echo "installing  ... "
       
-      echo -e "$GREY " sudo apt install -y python3-dev python3-pip libfreetype6-dev libjpeg-dev build-essential
+      echo -e "$GREY " 
+      sudo apt install -y python3-dev python3-pip libfreetype6-dev libjpeg-dev build-essential
       sudo apt install -y libsdl1.2-compat-dev  libportmidi-dev libsdl-ttf2.0-dev libsdl-mixer1.2-dev libsdl-image1.2-dev python3-dev
       clear
       toilet "Rock5b OLED" --metal
