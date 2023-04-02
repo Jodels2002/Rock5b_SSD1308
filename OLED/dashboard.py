@@ -18,7 +18,7 @@ import subprocess
 
 
 serial = i2c(port=0, address=0x3C)
-device = sh1106(serial)
+device = ssd1306(serial)
 
 top = 0
 width = 128
