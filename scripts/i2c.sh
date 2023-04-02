@@ -18,15 +18,8 @@ GREY='\033[1;30m'
       echo -e "$BLUE "
       echo "installing  ... "
     
-    if [ ! -f /opt/OLED/fonts/code1000.ttf ]; then 
-       cd
-       
-       git clone https://github.com/rm-hull/luma.examples.git
-       sudo chmod -R 777 luma.examples
-       cd luma.examples
-       sudo -H pip install -e .
-       
-       
+    if [ ! -d /opt/OLED/ ]; then 
+         
        mkdir /opt/OLED
        mkdir /opt/OLED/images
        mkdir /opt/OLED/fonts
@@ -37,7 +30,7 @@ GREY='\033[1;30m'
       sudo cp -f -R ~/Rock5b_SSD1308/scripts/* /usr/local/bin
       sudo cp -f -R ~/Rock5b_SSD1308/ /opt
       sudo chmod -R 775 /usr/local/bin
-      sudo chmod -R 775 /opt/Rock5b_SSD1308/
+      sudo chmod -R 775 /opt/
 
 
 
@@ -121,10 +114,22 @@ if [  -d /home/amiga/ ]; then
 fi    
    sudo adduser root i2c
    
+   
+       if [ ! -f /opt/OLED/fonts/code1000.ttf ]; then 
+       cd
+       
+       git clone https://github.com/rm-hull/luma.examples.git
+       sudo chmod -R 777 luma.examples
+       cd luma.examples
+       sudo -H pip install -e .
+      
+    fi
+   
   sudo chmod -R 775 /usr/local/bin
   sudo chmod -R 775 /opt/
   
   sudo rm -rf ~/Rock5b_SSD1308
+  sudo rm -rf ~/luma.examples
     
   
   clear
