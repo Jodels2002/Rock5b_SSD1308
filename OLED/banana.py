@@ -32,7 +32,7 @@ def main():
     size = [min(*device.size)] * 2
     posn = ((device.width - size[0]) // 2, device.height - size[1])
 
-    while True:
+    for x in range ( 5 ):
         for frame in ImageSequence.Iterator(banana):
             with regulator:
                 background = Image.new("RGB", device.size, "black")
@@ -40,9 +40,9 @@ def main():
                 device.display(background.convert(device.mode))
 if __name__ == "__main__":
     try:
-     for x in range ( 20 ):
+     
         main()
-        time.sleep(1)
+        
        
     except KeyboardInterrupt:
         pass
