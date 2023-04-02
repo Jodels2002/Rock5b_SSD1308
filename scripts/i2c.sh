@@ -114,7 +114,7 @@ fi
 
 if [  -d /home/amiga/ ]; then
     sudo adduser amiga i2c
-    echo 'amiga ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers
+    # echo 'amiga ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers
 fi    
    sudo adduser root i2c
    
