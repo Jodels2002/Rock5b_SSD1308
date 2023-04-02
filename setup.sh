@@ -17,4 +17,5 @@ GREY='\033[1;30m'
       echo "installing now ... "
       echo -e "$GREY " 
       sudo apt install -y dialog mc zip unzip wget 7zip
-  
+      
+       $HOME/AmiRock/scripts/i2c.sh
