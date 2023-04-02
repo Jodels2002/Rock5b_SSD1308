@@ -23,7 +23,8 @@ GREY='\033[1;30m'
      sudo  mkdir /opt/OLED
      sudo   mkdir /opt/OLED/images
      sudo   mkdir /opt/OLED/fonts
-    fi
+     sudo echo "overlays=rk3588-i2c0-m1" >> /boot/armbianEnv.txt
+     fi
 
      
       
@@ -43,9 +44,7 @@ if [ ! -f /opt/OLED/images/banana.gif ]; then
   clear
 fi
 
-  if [  -f /boot/armbianEnv.txt ]; then
-  sudo echo "overlays=rk3588-i2c0-m1" >> /boot/armbianEnv.txt
-  fi
+  
       clear
       toilet "Rock5b OLED" --metal
       echo " "
