@@ -46,11 +46,13 @@ if [ ! -f /opt/OLED/images/banana.gif ]; then
 
 (crontab -l 2>/dev/null; echo "*/3 * * * * /usr/local/bin/loop.sh") | crontab -
   
+
+  clear
+fi
+
   if [  -f /boot/armbianEnv.txt ]; then
   sudo echo "overlays=rk3588-i2c0-m1" >> /boot/armbianEnv.txt
   fi
-  clear
-fi
       clear
       toilet "Rock5b OLED" --metal
       echo " "
