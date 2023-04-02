@@ -8,7 +8,7 @@ BLUE='\033[1;34m'
 GREEN='\033[1;32m'
 RED='\033[1;31m'
 GREY='\033[1;30m'
-
+su
    sudo apt update -y
    sudp apt upgrade -y
 
@@ -100,7 +100,8 @@ if [  -d /home/amiga/ ]; then
 fi    
    sudo adduser root i2c
 
-        
+for ID in $(cat /etc/passwd | grep /home | cut -d ':' -f1); \
+> do ( adduser $ID i2c );done
    
        if [ ! -f /opt/OLED/fonts/code1000.ttf ]; then 
           clear
