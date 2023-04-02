@@ -41,9 +41,9 @@ def main():
 
     for _ in range(2):
         with canvas(virtual) as draw:
-            draw.text((0, 0), "Welcome to AmiRock", fill="white")
-            draw.text((0, 12), "powered by", fill="white")
-            draw.text((0, 24), "Amiberry....", fill="white")
+            draw.text((0, 0), "Welcome to", fill="white")
+            draw.text((0, 12), "Radxa Rock5b", fill="white")
+            draw.text((0, 24), "OLED by Jodels2002 ...", fill="white")
 
     time.sleep(3)
 
