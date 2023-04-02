@@ -15,7 +15,7 @@ from PIL import ImageFont
 
 
 serial = i2c(port=0, address=0x3C)
-device = sh1106(serial)
+device = ssd1306(serial)
 
 top = 0
 width = 128
@@ -85,7 +85,7 @@ def stats(device):
 
 
 def main():
-    for x in range ( 10 ):
+    for x in range ( 30 ):
         stats(device)
         time.sleep(1)
 
