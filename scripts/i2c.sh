@@ -144,9 +144,9 @@ fi
 echo -e "$BLUE "       
 sudo i2cdetect -y 0
 echo -e "$GREY "
-
+su
 for ID in $(cat /etc/passwd | grep /home | cut -d ':' -f1); \
- sudo adduser $ID i2c 
+ adduser $ID i2c 
    
 
 
