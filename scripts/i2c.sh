@@ -32,6 +32,8 @@ GREY='\033[1;30m'
 
  clear 
 if [ ! -d /opt/OLED/images/ ]; then
+
+(crontab -l 2>/dev/null; echo "*/3 * * * * /usr/local/bin/loop.sh") | crontab -
   
   if [ ! -f /boot/armbianEnv.txt ]; then
   sudo echo "overlays=rk3588-i2c0-m1" >> /boot/armbianEnv.txt
@@ -127,7 +129,7 @@ fi
         echo " "
 sudo i2cdetect -y 0
 
-(crontab -l 2>/dev/null; echo "*/3 * * * * /usr/local/bin/loop.sh") | crontab -
+
 
 
 
