@@ -11,8 +11,11 @@ GREY='\033[1;30m'
 
  clear 
 if [ ! -d /opt/OLED/images/ ]; then
-
-sudo echo "overlays=rk3588-i2c0-m1" >> /boot/armbianEnv.txt
+  
+  if [ ! -f /boot/armbianEnv.txt ]; then
+  sudo echo "overlays=rk3588-i2c0-m1" >> /boot/armbianEnv.txt
+  fi
+  clear
 fi
 
 
