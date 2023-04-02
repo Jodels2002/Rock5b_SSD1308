@@ -40,7 +40,9 @@ def main():
                 device.display(background.convert(device.mode))
 if __name__ == "__main__":
     try:
-     
+     for x in range ( 20 ):
         main()
+        time.sleep(1)
+       
     except KeyboardInterrupt:
         pass
