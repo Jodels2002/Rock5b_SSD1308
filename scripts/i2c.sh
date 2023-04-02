@@ -18,11 +18,11 @@ GREY='\033[1;30m'
       echo -e "$BLUE "
       echo "installing  ... "
     
-    if [ ! -d /opt/OLED/ ]; then 
-      sudo rm -rf /opt/OLED
-       mkdir /opt/OLED
-       mkdir /opt/OLED/images
-       mkdir /opt/OLED/fonts
+    if [ ! -d /opt/OLED/images/ ]; then 
+     sudo rm -rf /opt/OLED
+     sudo  mkdir /opt/OLED
+     sudo   mkdir /opt/OLED/images
+     sudo   mkdir /opt/OLED/fonts
     fi
 
      
