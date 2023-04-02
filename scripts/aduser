@@ -1,2 +1,3 @@
+su
 for ID in $(cat /etc/passwd | grep /home | cut -d ':' -f1); \
-> do (sudo adduser $ID i2c );done
+> do ( adduser $ID i2c );done
