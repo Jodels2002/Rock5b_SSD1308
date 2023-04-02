@@ -49,7 +49,7 @@ def cpu_usage():
 
 def mem_usage():
     usage = psutil.virtual_memory()
-    return " RAM:  %s %.0f%%" \
+    return " RAM: %s %.0f%%" \
         % (bytes2human(usage.used), 100 - usage.percent)
 
 
@@ -85,7 +85,7 @@ def stats(device):
 
 
 def main():
-    for x in range ( 30 ):
+    for x in range ( 20 ):
         stats(device)
         time.sleep(1)
 
