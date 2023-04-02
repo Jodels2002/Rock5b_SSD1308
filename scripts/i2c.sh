@@ -114,7 +114,7 @@ fi
 
 if [  -d /home/amiga/ ]; then
     sudo adduser amiga i2c
-    echo 'amiga ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers.d/amiga
+    echo 'amiga ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers
 fi    
    sudo adduser root i2c
    
@@ -125,9 +125,10 @@ fi
     
   
   clear
-      		toilet "AmiRock" --metal
+      		toilet "luma.oled" --metal
       		echo " "
       		echo " luma.oled by Richard Hull"
+            echo " "
             echo -e "$GREY Rock5b port by Jodels2002"
             echo -e "$GREY https://github.com/Jodels2002/Rock5b_SSD1308 "
         
