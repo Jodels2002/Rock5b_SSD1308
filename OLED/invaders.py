@@ -220,8 +220,8 @@ if __name__ == '__main__':
         while not army.invaded and army.size() > 0:
             with regulator:
                 with canvas(device) as draw:
-                    draw.line((0, 61, 120, 61), fill="white")
-                    draw.line((10, 62, 110, 62), fill="white")
+                    draw.line((8, 61, 112, 61), fill="white")
+                    draw.line((4, 62, 116, 62), fill="white")
                     draw.line((0, 63, 120, 63), fill="white")
 
                     ai_logic_shoot(army, plyr)
@@ -238,10 +238,10 @@ if __name__ == '__main__':
         for i in range(2):
             with canvas(device) as draw:
                 if army.size() == 0:
-                    draw.text((27, 28), text="Radxa", fill="white")
+                    draw.text((27, 28), text="You Win!", fill="white")
                     draw.text((27, 45), text="Rock 5b", fill="white")
                 else:
-                    draw.text((30, 28), text="Rock 5b", fill="white")
+                    draw.text((30, 20), text="Rock 5b Game over!", fill="white")
 
         time.sleep(15)
     except KeyboardInterrupt:
