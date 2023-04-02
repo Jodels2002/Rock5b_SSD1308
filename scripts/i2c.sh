@@ -128,8 +128,13 @@ fi
       		toilet "AmiRock" --metal
       		echo " "
       		echo " luma.oled by Richard Hull"
+            echo -e "$GREY Rock5b port by Jodels2002"
+        
+        echo -e "$BLUE "
         echo " "
+echo -e "$BLUE "       
 sudo i2cdetect -y 0
+echo -e "$GREY "
 
 
 
