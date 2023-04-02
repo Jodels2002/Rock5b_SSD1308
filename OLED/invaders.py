@@ -220,9 +220,9 @@ if __name__ == '__main__':
         while not army.invaded and army.size() > 0:
             with regulator:
                 with canvas(device) as draw:
-                    draw.line((0, 61, 128, 61), fill="white")
-                    draw.line((10, 62, 128, 52), fill="white")
-                    draw.line((0, 63, 128, 63), fill="white")
+                    draw.line((0, 61, 120, 61), fill="white")
+                    draw.line((10, 62, 110, 62), fill="white")
+                    draw.line((0, 63, 120, 63), fill="white")
 
                     ai_logic_shoot(army, plyr)
                     ai_logic_move(army, plyr, rows)
