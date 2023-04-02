@@ -9,6 +9,8 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 GREY='\033[1;30m'
 
+   sudo apt update -y
+   sudp apt upgrade -y
 
    clear
       toilet "Rock5b OLED" --metal
