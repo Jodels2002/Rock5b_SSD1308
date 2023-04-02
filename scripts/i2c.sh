@@ -108,6 +108,7 @@ fi
       echo " "
       echo -e "$BLUE "
       echo "installing  Richard Hull´s Luma ... "
+      echo -e "$GREY "
        
        cd
        
@@ -116,13 +117,11 @@ fi
        cd luma.examples
        sudo -H pip install -e .
      
-
-      
        
-       cp -rf  ~/luma.examples/examples/fonts /opt/OLED/
-       cp -rf  ~/luma.examples/examples/images /opt/OLED/
-       cp -rf  ~/luma.examples/examples/hotspot /opt/OLED/
-       cp -rf /opt/Rock5b_SSD1308/OLED/* /opt/OLED/
+       sudo cp -rf  ~/luma.examples/examples/fonts /opt/OLED/
+       sudo cp -rf  ~/luma.examples/examples/images /opt/OLED/
+       sudo cp -rf  ~/luma.examples/examples/hotspot /opt/OLED/
+       sudo cp -rf /opt/Rock5b_SSD1308/OLED/* /opt/OLED/
        sudo cp -rf /opt/OLED/fonts/* /usr/share/fonts/truetype/
     fi
    
