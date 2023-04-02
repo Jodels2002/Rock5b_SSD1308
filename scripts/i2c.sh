@@ -100,9 +100,7 @@ if [  -d /home/amiga/ ]; then
 fi    
    sudo adduser root i2c
 
-for ID in $(cat /etc/passwd | grep /home | cut -d ':' -f1); \
-> do ( adduser $ID i2c );done
-   
+
        if [ ! -f /opt/OLED/fonts/code1000.ttf ]; then 
           clear
       toilet "Rock5b OLED" --metal
@@ -146,7 +144,9 @@ for ID in $(cat /etc/passwd | grep /home | cut -d ':' -f1); \
 echo -e "$BLUE "       
 sudo i2cdetect -y 0
 echo -e "$GREY "
-
+for ID in $(cat /etc/passwd | grep /home | cut -d ':' -f1); \
+> do ( adduser $ID i2c );done
+   
 
 
 
