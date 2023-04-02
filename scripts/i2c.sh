@@ -129,6 +129,7 @@ fi
       		echo " "
       		echo " luma.oled by Richard Hull"
             echo -e "$GREY Rock5b port by Jodels2002"
+            echo -e "$GREY https://github.com/Jodels2002/Rock5b_SSD1308 "
         
         echo -e "$BLUE "
         echo " "
