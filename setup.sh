@@ -18,4 +18,4 @@ GREY='\033[1;30m'
       echo -e "$GREY " 
       sudo apt install -y dialog mc zip unzip wget 7zip
       
-  ~/Rock5b_SSD1308/i2c.sh
+  ~/Rock5b_SSD1308/scripts/i2c.sh
