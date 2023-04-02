@@ -86,7 +86,7 @@ fi
       echo " "
       echo -e "$BLUE "
       echo "installing  Richard Hull´s Luma ... "
-       
+    if [ ! -f /opt/OLED/fonts/code1000.ttf ]; then 
        cd
        
        git clone https://github.com/rm-hull/luma.examples.git
@@ -97,7 +97,7 @@ fi
        
        mkdir /opt/OLED
        mkdir /opt/OLED/images
-
+    fi
       
        
        cp -rf  ~/luma.examples/examples/fonts /opt/OLED/
