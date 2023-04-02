@@ -120,8 +120,8 @@ fi
    sudo adduser root i2c
    
   sudo chmod -R 775 /usr/local/bin
-  sudo chmod -R 775 /opt/Rock5b_SSD1308/
-  sudo rm -rf ~/luma.examples 
+  sudo chmod -R 775 /opt/
+  
   sudo rm -rf ~/Rock5b_SSD1308
     
   
