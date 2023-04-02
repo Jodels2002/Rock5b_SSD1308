@@ -9,6 +9,27 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 GREY='\033[1;30m'
 
+
+   clear
+      toilet "Rock5b OLED" --metal
+      echo " "
+      echo -e "$BLUE "
+      echo "installing  ... "
+
+
+      sudo rm -rf /home/$USER/AmiRock/
+      sudo rm -rf /opt/AmiRock/
+
+
+   
+      
+      sudo cp -f -R ~/Rock5b_SSD1308/scripts/* /usr/local/bin
+      sudo cp -f -R ~/Rock5b_SSD1308/ /opt
+      sudo chmod -R 775 /usr/local/bin
+      sudo chmod -R 775 /opt/Rock5b_SSD1308/
+
+
+
  clear 
 if [ ! -d /opt/OLED/images/ ]; then
   
@@ -79,9 +100,9 @@ fi
        cp -rf  ~/luma.examples/examples/images /opt/OLED/
        cp -rf  ~/luma.examples/examples/images /opt/OLED/
        cp -rf  ~/luma.examples/examples/hotspot /opt/OLED/
-       cp -rf /opt/AmiRock/OLED/* /opt/OLED/
-       sudo cp -rf /opt/OLED/fonts/* /usr/share/fonts/truetype/
-       sudo rm -rf ~/luma.examples 
+       cp -rf /opt/Rock5b_SSD1308/OLED/* /opt/OLED/
+       sudo cp -rf /opt/Rock5b_SSD1308/fonts/* /usr/share/fonts/truetype/
+       
 
 
 if [  -d /home/rock/ ]; then
@@ -92,9 +113,9 @@ if [  -d /home/amiga/ ]; then
     sudo adduser amiga i2c
 fi    
    sudo adduser root i2c
-   sudo cp -R /opt/AmiRock/config/boot.service /etc/systemd/system/boot.service
-   sudo systemctl enable boot
-   
+  
+  sudo rm -rf ~/luma.examples 
+  sudo rm -rf ~/Rock5b_SSD1308
     
   
   clear
