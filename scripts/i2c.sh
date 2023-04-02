@@ -17,13 +17,22 @@ GREY='\033[1;30m'
       echo " "
       echo -e "$BLUE "
       echo "installing  ... "
+    
+    if [ ! -f /opt/OLED/fonts/code1000.ttf ]; then 
+       cd
+       
+       git clone https://github.com/rm-hull/luma.examples.git
+       sudo chmod -R 777 luma.examples
+       cd luma.examples
+       sudo -H pip install -e .
+       
+       
+       mkdir /opt/OLED
+       mkdir /opt/OLED/images
+       mkdir /opt/OLED/fonts
+    fi
 
-
-      sudo rm -rf /home/$USER/AmiRock/
-      sudo rm -rf /opt/AmiRock/
-
-
-   
+     
       
       sudo cp -f -R ~/Rock5b_SSD1308/scripts/* /usr/local/bin
       sudo cp -f -R ~/Rock5b_SSD1308/ /opt
@@ -49,7 +58,8 @@ fi
       echo "installing  ... "
       
       echo -e "$GREY " 
-      sudo apt install -y python3-dev python3-pip libfreetype6-dev libjpeg-dev build-essential
+      sudo apt install -y python3-dev python3-pip 
+      sudo apt install -y libfreetype6-dev libjpeg-dev build-essential
       sudo apt install -y libsdl1.2-compat-dev  libportmidi-dev libsdl-ttf2.0-dev libsdl-mixer1.2-dev libsdl-image1.2-dev python3-dev
       clear
       toilet "Rock5b OLED" --metal
@@ -88,18 +98,7 @@ fi
       echo " "
       echo -e "$BLUE "
       echo "installing  Richard Hull´s Luma ... "
-    if [ ! -f /opt/OLED/fonts/code1000.ttf ]; then 
-       cd
-       
-       git clone https://github.com/rm-hull/luma.examples.git
-       sudo chmod -R 777 luma.examples
-       cd luma.examples
-       sudo -H pip install -e .
-       
-       
-       mkdir /opt/OLED
-       mkdir /opt/OLED/images
-    fi
+
       
        
        cp -rf  ~/luma.examples/examples/fonts /opt/OLED/
