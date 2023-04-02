@@ -17,18 +17,51 @@ if [ ! -d /opt/OLED/images/ ]; then
   fi
   clear
 fi
-
-
-sudo apt install -y python3-dev python3-pip libfreetype6-dev libjpeg-dev build-essential
-sudo apt install -y libsdl1.2-compat-dev  libportmidi-dev libsdl-ttf2.0-dev libsdl-mixer1.2-dev libsdl-image1.2-dev python3-dev
+      clear
+      toilet "Rock5b OLED" --metal
+      echo " "
+      echo -e "$BLUE "
+      echo "installing  ... "
+      
+      echo -e "$GREY " sudo apt install -y python3-dev python3-pip libfreetype6-dev libjpeg-dev build-essential
+      sudo apt install -y libsdl1.2-compat-dev  libportmidi-dev libsdl-ttf2.0-dev libsdl-mixer1.2-dev libsdl-image1.2-dev python3-dev
+      clear
+      toilet "Rock5b OLED" --metal
+      echo " "
+      echo -e "$BLUE "
+      echo "installing  Python ... "
        
         sudo python3 -m pip install -U setuptools
+      clear
+      toilet "Rock5b OLED" --metal
+      echo " "
+      echo -e "$BLUE "
+      echo "installing  Python ... "
         sudo python3 -m pip install -U gpiod
+        clear
+      toilet "Rock5b OLED" --metal
+      echo " "
+      echo -e "$BLUE "
+      echo "installing  Luma.Core ... "
         sudo pip install --upgrade luma.core
+      clear
+      toilet "Rock5b OLED" --metal
+      echo " "
+      echo -e "$BLUE "
+      echo "installing  Luma.Oled ... "
         sudo python3 -m pip install -U  luma.oled
+        clear
+      toilet "Rock5b OLED" --metal
+      echo " "
+      echo -e "$BLUE "
+      echo "installing  Psutil ... "
         sudo python3 -m pip install -U psutil
         
-        #sudo python3 -m pip install -U RPi.GPIO
+    clear
+      toilet "Rock5b OLED" --metal
+      echo " "
+      echo -e "$BLUE "
+      echo "installing  Richard Hull´s Luma ... "
        
        cd
        
@@ -70,7 +103,8 @@ fi
       		echo " luma.oled by Richard Hull"
         echo " "
 sudo i2cdetect -y 0
-(crontab -l 2>/dev/null; echo "*/5 * * * * /usr/local/bin/loop.sh") | crontab -
+
+(crontab -l 2>/dev/null; echo "*/3 * * * * /usr/local/bin/loop.sh") | crontab -
 
 
 
