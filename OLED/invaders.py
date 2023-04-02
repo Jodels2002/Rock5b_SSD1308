@@ -241,7 +241,7 @@ if __name__ == '__main__':
                     draw.text((27, 28), text="You Win!", fill="white")
                     draw.text((27, 45), text="Rock 5b", fill="white")
                 else:
-                    draw.text((30, 20), text="Rock 5b Game over!", fill="white")
+                    draw.text((30, 20), text="Rock5b Game over!", fill="white")
 
         time.sleep(15)
     except KeyboardInterrupt:
