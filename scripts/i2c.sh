@@ -39,7 +39,7 @@ fi
     sudo chmod -R 777 /home/armbianEnv.txt 
     sudo echo "overlays=rk3588-i2c0-m1" >> /home/armbianEnv.txt
     sudo rm /boot/config.txt
-    sudo cp -rf /boot/armbianEnv.txt   /boot/
+    sudo cp -rf /home/armbianEnv.txt   /boot/
     #sudo rm /home/armbianEnv.txt
     echo "overlays=rk3588-i2c0-m1 added to config.txt "
    else
