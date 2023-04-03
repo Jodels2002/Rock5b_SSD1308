@@ -152,12 +152,12 @@ echo -e "$GREY "
 
 isInFile=$(cat /boot/config.txt  | grep -c "dtoverlay=rk3588-i2c0-m1")
 if [ $isInFile -eq 0 ]; then 
-    sudo cp -rf /boot/config.txt  $USER/
+    sudo cp -rf /boot/config.txt  /home/
     sudo chmod -R 775 ~/config.txt 
-    sudo echo "dtoverlay=rk3588-i2c0-m1" >> $USER/config.txt 
+    sudo echo "dtoverlay=rk3588-i2c0-m1" >> /home/config.txt 
     sudo rm /boot/config.txt
-    sudo cp -rf $USER/config.txt   /boot/
-    sudo rm $USER/config.txt 
+    sudo cp -rf /home/config.txt   /boot/
+    #sudo rm /home/config.txt 
     echo "dtoverlay=rk3588-i2c0-m1 added to config.txt "
 else
  echo "dtoverlay=rk3588-i2c0-m1 found in config.txt :-) "
