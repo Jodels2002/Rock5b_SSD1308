@@ -66,7 +66,11 @@ def main():
                 draw.ellipse((left + 1 + margin, margin + 1, right - 1 - margin, min(device.height, 64) - margin - 1), outline="white")
               
                 draw.line((cx, cy, cx + hrs[0], cy + hrs[1]), fill="white")
+                draw.line((cx + 2, cy, cx + hrs[0] + 0, cy + hrs[1]), fill="white")
+                draw.line((cx - 2, cy, cx + hrs[0] - 0, cy + hrs[1]), fill="white")
                 draw.line((cx, cy, cx + mins[0], cy + mins[1]), fill="white")
+                draw.line((cx + 2, cy, cx + mins[0] + 0, cy + mins[1]), fill="white")
+                draw.line((cx - 2, cy, cx + mins[0] - 0, cy + mins[1]), fill="white")
                 draw.line((cx, cy, cx + secs[0], cy + secs[1]), fill="red")
                 draw.ellipse((cx - 2, cy - 2, cx + 2, cy + 2), fill="white", outline="white")
                 draw.text((2 * (cx + margin), cy - 30), today_date, fill="yellow")
