@@ -43,7 +43,7 @@ def cpu_usage():
     # load average, uptime
     uptime = datetime.now() - datetime.fromtimestamp(psutil.boot_time())
     av1, av2, av3 = os.getloadavg()
-    return "  CPU:  %1.2f             %1f %1f   Up: %s" \
+    return "   CPU:  %1.2f             %1f %1f   Up: %s" \
         % (av1, av2, av3, str(uptime).split('.')[0])
 
 
@@ -62,7 +62,7 @@ def disk_usage(dir):
 def stats(device):
     # use custom font
     font1 = ImageFont.truetype('fontawesome-webfont.ttf', 19)
-    font2 = ImageFont.truetype('bodoni.ttf', 15)
+    font2 = ImageFont.truetype('C&C Red Alert [INET].ttf', 15)
 
  
     with canvas(device) as draw:
