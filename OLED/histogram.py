@@ -165,6 +165,9 @@ def main(device, histogramData, histogramTime):
 if __name__ == "__main__":
    
     histogramData, histogramTime = init_histogram()
-    while True:
+    for x in range ( 25 ):
         main(device, histogramData, histogramTime)
         time.sleep(REFRESH_INTERVAL)
+        
+         
+        
