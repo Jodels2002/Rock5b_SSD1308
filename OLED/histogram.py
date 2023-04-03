@@ -110,24 +110,12 @@ def main(device, histogramData, histogramTime):
 
         
 
-        # RAM bar outline and legend
-        # draw.rectangle((minRamBarW, minRamBarH, maxRamBarW, maxRamBarH))
-        draw.text((ramBarWidth + 10, minRamBarH), 'RAM', fill="white")
+       
 
         # System Uptime
         draw.text((3, 2), "Uptime: " + str(sysUptime)[:7], fill="white")
 
-        # RAM usage bar
-        if ramBarWidth < maxRamBarW:
-            draw.rectangle((minRamBarW, minRamBarH, ramBarWidth, maxRamBarH), fill="white")
-            if ramUsd < 100:
-                draw.text((ramBarWidth - 11, minRamBarH), str(ramUsd), fill="white")
-               
-            else:
-                draw.text((ramBarWidth - 17, minRamBarH), str(ramUsd), fill="black")
-        else:
-            draw.rectangle((minRamBarW, minRamBarH, maxRamBarW, maxRamBarH), fill="red")
-
+       
         # Historgram
         histogramData.insert(0, histogramHeight)
         for htime in range(0, len(histogramTime) - 1):
@@ -140,9 +128,7 @@ def main(device, histogramData, histogramTime):
                 draw.line((histogramTime[timePlusOne], histogramData[timePlusOne], histogramTime[htime], histogramData[htime]), fill="orange")
 
         histogramData.pop(len(histogramTime) - 1)
-        # draw.rectangle((minHistLenght, maxHistHeight, minHistLenght + 27, maxHistHeight + 13), fill="black", outline="white")
-        #draw.text((minHistLenght + 2, maxHistHeight + 2), "{0:.2f}".format(cpuLoad[0]), fill="white")
-        draw.text((minHistLenght + 2, maxHistHeight - 6), "{0:.2f}".format(cpuLoad[0]) + " CPU Load", fill="white")
+        draw.text((minHistLenght + 2, maxHistHeight - 12), "{0:.2f}".format(cpuLoad[0]) + "  CPU Load", fill="white")
         # CPU Temperature
         if height > minBarHeight:
             draw.rectangle((112, height, 120, maxBarHeight), fill="white")
@@ -166,9 +152,7 @@ def main(device, histogramData, histogramTime):
 if __name__ == "__main__":
    
     histogramData, histogramTime = init_histogram()
-    for x in range ( 7 ):
+    for x in range ( 20 ):
         main(device, histogramData, histogramTime)
         time.sleep(REFRESH_INTERVAL)
-        
-         
         
