@@ -35,16 +35,15 @@ blurb = """
 
 
 def main():
-    img_path = str(Path(__file__).resolve().parent.joinpath('images', 'Radxa_oshw.pgm'))
+    img_path = str(Path(__file__).resolve().parent.joinpath('images', 'Radxa_oshw.png'))
     logo = Image.open(img_path)
 
     virtual = viewport(device, width=device.width, height=200)
 
     for _ in range(2):
         with canvas(virtual) as draw:
-            draw.text((0, 0), "Welcome to", fill="white")
-            draw.text((0, 12), "Radxa Rock5b", fill="white")
-            draw.text((0, 30), "OLED by Jodels2002 ...", fill="white")
+            draw.text((0, 30), "Booting finished ...", fill="white")
+           
 
     time.sleep(3)
 
