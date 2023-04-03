@@ -192,6 +192,7 @@ echo -e "$GREY "
     echo -e "$RED Please add dtoverlay=rk3588-i2c0-m1 to /boot/config.txt "
    else
   echo -e "$GREEN dtoverlay=rk3588-i2c0-m1 found in config.txt :-)"
+  echo -e "$GREEN overlays=rk3588-i2c0-m1 driver seems to be ok"
    fi
 fi
 
@@ -203,10 +204,12 @@ fi
      echo -e "$RED Please add overlays=rk3588-i2c0-m1 to /boot/armbianEnv.txt"
    else
  echo -e "$GREEN overlays=rk3588-i2c0-m1 driver seems to be ok"
+ echo -e "$GREEN Please reboot now ..."
+ 
    fi
      fi
 
-  
+ echo -e "$BLACK "  
 
 
 
