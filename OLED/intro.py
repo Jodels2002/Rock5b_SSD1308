@@ -25,16 +25,17 @@ height = 64
 
 blurb = """
 
+   Welcome to
+   
+      Radxa
+     Rock 5b
 
-   Radxa
-   Rock 5b
-
-
+   OLED by Jodels2002 ... 
 """
 
 
 def main():
-    img_path = str(Path(__file__).resolve().parent.joinpath('images', 'Amiberry.pbm'))
+    img_path = str(Path(__file__).resolve().parent.joinpath('images', 'Radxa_oshw.pgm'))
     logo = Image.open(img_path)
 
     virtual = viewport(device, width=device.width, height=200)
@@ -43,7 +44,7 @@ def main():
         with canvas(virtual) as draw:
             draw.text((0, 0), "Welcome to", fill="white")
             draw.text((0, 12), "Radxa Rock5b", fill="white")
-            draw.text((0, 24), "OLED by Jodels2002 ...", fill="white")
+            draw.text((0, 30), "OLED by Jodels2002 ...", fill="white")
 
     time.sleep(3)
 
