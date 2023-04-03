@@ -66,14 +66,10 @@ fi
 
     fi
 
-     
-      
       sudo cp -f -R ~/Rock5b_SSD1308/scripts/* /usr/local/bin
       sudo cp -f -R ~/Rock5b_SSD1308/ /opt
       sudo chmod -R 775 /usr/local/bin
       sudo chmod -R 775 /opt/
-
-
 
  clear 
 if [ ! -f /opt/OLED/images/banana.gif ]; then
@@ -83,8 +79,6 @@ if [ ! -f /opt/OLED/images/banana.gif ]; then
 
   clear
 fi
-
-  
       clear
       toilet "Rock5b OLED" --metal
       echo " "
@@ -127,8 +121,6 @@ fi
       echo "installing  Psutil ... "
         sudo python3 -m pip install -U psutil
         
-    
-
 
 if [  -d /home/rock/ ]; then
      sudo adduser rock i2c
@@ -155,8 +147,7 @@ fi
        sudo chmod -R 777 luma.examples
        cd luma.examples
        sudo -H pip install -e .
-     
-       
+      
        sudo cp -rf  ~/luma.examples/examples/fonts /opt/OLED/
        sudo cp -rf  ~/luma.examples/examples/images /opt/OLED/
        sudo cp -rf  ~/luma.examples/examples/hotspot /opt/OLED/
@@ -169,7 +160,6 @@ fi
   
   sudo rm -rf ~/Rock5b_SSD1308
   sudo rm -rf ~/luma.examples
-    
   
   clear
       		toilet "luma.oled" --metal
