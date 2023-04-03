@@ -148,7 +148,7 @@ echo -e "$GREY "
      if [  -f /boot/armbianEnv.txt  ]; then 
      sudo echo "overlays=rk3588-i2c0-m1" >> /boot/armbianEnv.txt
      fi
-
+su
 
 isInFile=$(cat /boot/config.txt  | grep -c "dtoverlay=rk3588-i2c0-m1")
 if [ $isInFile -eq 0 ]; then
