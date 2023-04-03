@@ -62,7 +62,7 @@ def disk_usage(dir):
 def stats(device):
     # use custom font
     font1 = ImageFont.truetype('fontawesome-webfont.ttf', 19)
-    font2 = ImageFont.truetype('code2000.ttf', 15)
+    font2 = ImageFont.truetype('bodoni.ttf', 15)
 
  
     with canvas(device) as draw:
