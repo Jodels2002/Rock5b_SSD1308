@@ -23,8 +23,8 @@ GREY='\033[1;30m'
      sudo  mkdir /opt/OLED
      sudo   mkdir /opt/OLED/images
      sudo   mkdir /opt/OLED/fonts
-     sudo echo "overlays=rk3588-i2c0-m1" >> /boot/armbianEnv.txt
-     fi
+
+    fi
 
      
       
@@ -145,9 +145,18 @@ echo -e "$BLUE "
 sudo i2cdetect -y 0
 echo -e "$GREY "
 
+     if [  -f /boot/armbianEnv.txt  ]; then 
+     sudo echo "overlays=rk3588-i2c0-m1" >> /boot/armbianEnv.txt
+     fi
 
 
-
+isInFile=$(cat /boot/config.txt  | grep -c "dtoverlay=rk3588-i2c0-m1")
+if [ $isInFile -eq 0 ]; then
+   sudo echo "dtoverlay=rk3588-i2c0-m1" >> /boot/config.txt 
+    echo "dtoverlay=rk3588-i2c0-m1 added least once"
+else
+ echo "string is in file at least once"
+fi
 
 
 
