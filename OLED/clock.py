@@ -33,7 +33,7 @@ def main():
 	
     today_last_time = "Unknown"
     # Time in s in sec*********************************************************************
-    s = 40
+    s = 30
     x = s * 4
     for t in range ( x ):
         now = datetime.datetime.now()
