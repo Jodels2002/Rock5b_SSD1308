@@ -6,5 +6,5 @@ if [  -d /opt/OLED/images/ ]; then
     python3 banana.py 
     python3 clock.py    
     python3 sysinfo.py
-    histogram.py
+    python3 histogram.py
 fi
