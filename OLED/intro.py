@@ -35,7 +35,7 @@ blurb = """
 
 
 def main():
-    img_path = str(Path(__file__).resolve().parent.joinpath('images', 'radxa_welcome.png'))
+    img_path = str(Path(__file__).resolve().parent.joinpath('images', 'radxa.pgm'))
     logo = Image.open(img_path)
 
     virtual = viewport(device, width=device.width, height=200)
