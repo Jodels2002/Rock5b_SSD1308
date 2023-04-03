@@ -153,6 +153,9 @@ echo -e "$GREY "
 isInFile=$(cat /boot/config.txt  | grep -c "dtoverlay=rk3588-i2c0-m1")
 if [ $isInFile -eq 0 ]; then
    sudo echo "dtoverlay=rk3588-i2c0-m1" >> /boot/config.txt 
+    sudo cp -rf /boot/config.txt  /home/$USER/
+    sudo echo "dtoverlay=rk3588-i2c0-m1" >> /home/$USER/config.txt 
+    sudo cp -rf /home/$USER/config.txt   /boot/
     echo "dtoverlay=rk3588-i2c0-m1 added least once"
 else
  echo "string is in file at least once"
