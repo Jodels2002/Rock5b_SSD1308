@@ -183,6 +183,29 @@ echo -e "$BLUE "
 sudo i2cdetect -y 0
 echo -e "$GREY "
 
+
+ if [  -f /boot/config.txt  ]; then  
+
+   isInFile=$(cat /boot/config.txt  | grep -c "dtoverlay=rk3588-i2c0-m1")
+   if [ $isInFile -eq 0 ]; then 
+    
+    echo -e "$RED Please add dtoverlay=rk3588-i2c0-m1 to /boot/config.txt "
+   else
+  echo -e "$GREEN dtoverlay=rk3588-i2c0-m1 found in config.txt :-)"
+   fi
+fi
+
+
+ if [  -f /boot/armbianEnv.txt  ]; then 
+      isInFile=$(cat /boot/armbianEnv.txt  | grep -c "overlays=rk3588-i2c0-m1")
+   if [ $isInFile -eq 0 ]; then 
+   
+     echo -e "$RED Please add overlays=rk3588-i2c0-m1 to /boot/armbianEnv.txt"
+   else
+ echo -e "$GREEN overlays=rk3588-i2c0-m1 driver seems to be ok"
+   fi
+     fi
+
   
 
 
