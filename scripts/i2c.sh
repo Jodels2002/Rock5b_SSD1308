@@ -11,6 +11,42 @@ GREY='\033[1;30m'
 
    sudo apt update -y
    sudp apt upgrade -y
+ if [  -f /boot/config.txt  ]; then  
+   export DISTRO=focal-stable
+   wget -O - apt.radxa.com/$DISTRO/public.key | sudo apt-key add -
+   sudo apt-get dist-upgrade -y
+   isInFile=$(cat /boot/config.txt  | grep -c "dtoverlay=rk3588-i2c0-m1")
+   if [ $isInFile -eq 0 ]; then 
+    sudo apt install -y cron
+    sudo cp -rf /boot/config.txt  /home/
+    sudo chmod -R 777 /home/config.txt 
+    sudo echo "dtoverlay=rk3588-i2c0-m1" >> /home/config.txt 
+    sudo rm /boot/config.txt
+    sudo cp -rf /home/config.txt   /boot/
+    #sudo rm /home/config.txt 
+    echo "dtoverlay=rk3588-i2c0-m1 added to config.txt "
+   else
+ echo "dtoverlay=rk3588-i2c0-m1 found in config.txt :-) "
+   fi
+fi
+
+
+ if [  -f /boot/armbianEnv.txt  ]; then 
+      isInFile=$(cat /boot/armbianEnv.txt  | grep -c "overlays=rk3588-i2c0-m1")
+   if [ $isInFile -eq 0 ]; then 
+    sudo apt install -y cron
+    sudo cp -rf /boot/armbianEnv.txt  /home/
+    sudo chmod -R 777 /home/armbianEnv.txt 
+    sudo echo "overlays=rk3588-i2c0-m1" >> /home/armbianEnv.txt
+    sudo rm /boot/config.txt
+    sudo cp -rf /boot/armbianEnv.txt   /boot/
+    #sudo rm /home/armbianEnv.txt
+    echo "overlays=rk3588-i2c0-m1 added to config.txt "
+   else
+ echo "overlays=rk3588-i2c0-m1 found in config.txt :-) "
+   fi
+     fi
+
 
    clear
       toilet "Rock5b OLED" --metal
@@ -145,24 +181,9 @@ echo -e "$BLUE "
 sudo i2cdetect -y 0
 echo -e "$GREY "
 
-     if [  -f /boot/armbianEnv.txt  ]; then 
-     sudo echo "overlays=rk3588-i2c0-m1" >> /boot/armbianEnv.txt
-     fi
+  
 
 
-isInFile=$(cat /boot/config.txt  | grep -c "dtoverlay=rk3588-i2c0-m1")
-if [ $isInFile -eq 0 ]; then 
-    sudo apt install -y cron
-    sudo cp -rf /boot/config.txt  /home/
-    sudo chmod -R 775 /home/config.txt 
-    sudo echo "dtoverlay=rk3588-i2c0-m1" >> /home/config.txt 
-    sudo rm /boot/config.txt
-    sudo cp -rf /home/config.txt   /boot/
-    #sudo rm /home/config.txt 
-    echo "dtoverlay=rk3588-i2c0-m1 added to config.txt "
-else
- echo "dtoverlay=rk3588-i2c0-m1 found in config.txt :-) "
-fi
 
 
 
