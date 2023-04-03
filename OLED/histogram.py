@@ -37,6 +37,23 @@ REFRESH_INTERVAL = 1
 # FlipFlop blink variable
 blnk = 1
 
+def init_histogram():
+    # HistogramSettings
+    histogramResolution = 100
+    histogramTime = []
+    histogramData = []
+    x = 106
+    # Filling up the arrays for the histogram
+    for pix in range(0, histogramResolution):
+        x -= 2
+        if x > 2:
+            histogramTime.append(x)
+
+    for timeLen in range(0, len(histogramTime)):
+        histogramData.append(60)
+
+    return histogramData, histogramTime
+
 
 def main(device, histogramData, histogramTime):
     # Importing some global vars
