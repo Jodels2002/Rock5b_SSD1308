@@ -43,7 +43,7 @@ def cpu_usage():
     # load average, uptime
     uptime = datetime.now() - datetime.fromtimestamp(psutil.boot_time())
     av1, av2, av3 = os.getloadavg()
-    return "  CPU:   %1.2f             %1f %1f   Up: %s" \
+    return "  CPU:  %1.2f             %1f %1f   Up: %s" \
         % (av1, av2, av3, str(uptime).split('.')[0])
 
 
