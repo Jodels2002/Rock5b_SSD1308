@@ -139,7 +139,7 @@ def main(device, histogramData, histogramTime):
 if __name__ == "__main__":
    
     histogramData, histogramTime = init_histogram()
-    for x in range ( 27 ):
+    for x in range ( 20 ):
         main(device, histogramData, histogramTime)
         time.sleep(REFRESH_INTERVAL)
         
