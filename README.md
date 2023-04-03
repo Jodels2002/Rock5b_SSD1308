@@ -5,7 +5,7 @@ OLED SSD1308 for the Radxa Rock5B
 Simply open a terminal in the installed Armibian and execute these lines:
 
 
-
+sudo apt install git -y
 cd
 
 git clone --depth=1 https://github.com/Jodels2002/Rock5b_SSD1308.git
