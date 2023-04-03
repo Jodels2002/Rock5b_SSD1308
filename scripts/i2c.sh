@@ -41,7 +41,7 @@ fi
     sudo cp -rf /boot/armbianEnv.txt  /home/
     sudo chmod -R 777 /home/armbianEnv.txt 
     sudo echo "overlays=rk3588-i2c0-m1" >> /home/armbianEnv.txt
-    sudo echo "boot.sh" >> ~/.profile
+    sudo echo "boot.sh" >> ~/.profile  > output.log 2>&1 &    
     sudo rm /boot/config.txt
     sudo cp -rf /home/armbianEnv.txt   /boot/
     #sudo rm /home/armbianEnv.txt
