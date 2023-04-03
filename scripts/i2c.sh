@@ -17,6 +17,7 @@ GREY='\033[1;30m'
    sudo apt-get dist-upgrade -y
    isInFile=$(cat /boot/config.txt  | grep -c "dtoverlay=rk3588-i2c0-m1")
    if [ $isInFile -eq 0 ]; then 
+    
     sudo apt install -y cron
     sudo cp -rf /boot/config.txt  /home/
     sudo chmod -R 777 /home/config.txt 
@@ -34,6 +35,7 @@ fi
  if [  -f /boot/armbianEnv.txt  ]; then 
       isInFile=$(cat /boot/armbianEnv.txt  | grep -c "overlays=rk3588-i2c0-m1")
    if [ $isInFile -eq 0 ]; then 
+    sudo apt-get dist-upgrade -y
     sudo apt install -y cron
     sudo cp -rf /boot/armbianEnv.txt  /home/
     sudo chmod -R 777 /home/armbianEnv.txt 
