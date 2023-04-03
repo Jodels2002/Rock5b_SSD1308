@@ -85,7 +85,7 @@ def stats(device):
 
 
 def main():
-    for x in range ( 20 ):
+    for x in range ( 25 ):
         stats(device)
         time.sleep(1)
 
