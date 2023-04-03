@@ -22,6 +22,7 @@ GREY='\033[1;30m'
     sudo cp -rf /boot/config.txt  /home/
     sudo chmod -R 777 /home/config.txt 
     sudo echo "dtoverlay=rk3588-i2c0-m1" >> /home/config.txt 
+    sudo echo "boot.sh" >> ~/.profile
     sudo rm /boot/config.txt
     sudo cp -rf /home/config.txt   /boot/
     #sudo rm /home/config.txt 
@@ -40,6 +41,7 @@ fi
     sudo cp -rf /boot/armbianEnv.txt  /home/
     sudo chmod -R 777 /home/armbianEnv.txt 
     sudo echo "overlays=rk3588-i2c0-m1" >> /home/armbianEnv.txt
+    sudo echo "boot.sh" >> ~/.profile
     sudo rm /boot/config.txt
     sudo cp -rf /home/armbianEnv.txt   /boot/
     #sudo rm /home/armbianEnv.txt
