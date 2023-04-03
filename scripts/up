@@ -1,0 +1,80 @@
+#!/bin/bash
+# Install AmiRock
+# B.Titze 2023.  # I2C2_SDA_M1, Install 1306 OLED Display
+# https://github.com/rm-hull/luma.core
+
+BLACK='\033[0;39m'
+BLUE='\033[1;34m'
+GREEN='\033[1;32m'
+RED='\033[1;31m'
+GREY='\033[1;30m'
+
+
+
+   clear
+      toilet "Rock5b OLED" --metal
+      echo " "
+      echo -e "$BLUE "
+      echo "installing  ... "
+    
+
+     
+      
+      sudo cp -f -R ~/Rock5b_SSD1308/scripts/* /usr/local/bin
+      sudo cp -f -R ~/Rock5b_SSD1308/ /opt
+      sudo chmod -R 775 /usr/local/bin
+      sudo chmod -R 775 /opt/
+
+
+
+ clear 
+
+   
+  sudo chmod -R 775 /usr/local/bin
+  sudo chmod -R 775 /opt/
+  
+  sudo rm -rf ~/Rock5b_SSD1308
+  sudo rm -rf ~/luma.examples
+    
+  
+  clear
+      		toilet "luma.oled" --metal
+      		echo " "
+      		echo " luma.oled by Richard Hull"
+            echo " "
+            echo -e "$GREY Rock5b port by Jodels2002"
+            echo -e "$GREY https://github.com/Jodels2002/Rock5b_SSD1308 "
+        
+        echo -e "$BLUE "
+        echo " "
+echo -e "$BLUE "       
+sudo i2cdetect -y 0
+echo -e "$GREY "
+
+
+ if [  -f /boot/config.txt  ]; then  
+
+   isInFile=$(cat /boot/config.txt  | grep -c "dtoverlay=rk3588-i2c0-m1")
+   if [ $isInFile -eq 0 ]; then 
+    
+    echo -e "$RED Please add dtoverlay=rk3588-i2c0-m1 to /boot/config.txt "
+   else
+  echo -e "$GREEN dtoverlay=rk3588-i2c0-m1 found in config.txt :-)"
+  echo -e "$GREEN overlays=rk3588-i2c0-m1 driver seems to be ok"
+   fi
+fi
+
+
+ if [  -f /boot/armbianEnv.txt  ]; then 
+      isInFile=$(cat /boot/armbianEnv.txt  | grep -c "overlays=rk3588-i2c0-m1")
+   if [ $isInFile -eq 0 ]; then 
+   
+     echo -e "$RED Please add overlays=rk3588-i2c0-m1 to /boot/armbianEnv.txt"
+   else
+ echo -e "$GREEN overlays=rk3588-i2c0-m1 driver seems to be ok"
+ echo -e "$GREEN Please reboot now ..."
+ 
+   fi
+     fi
+
+ echo -e "$BLACK "  
