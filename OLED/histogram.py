@@ -98,19 +98,6 @@ def main(device, histogramData, histogramTime):
 
     # Starting the canvas for the screen
     with canvas(device, dither=True) as draw:
-        # Print
-        # Drawing the outlines and legends:
-        # Main Outline
-        # draw.rectangle(device.bounding_box, outline="white")
-
-        # Histogram Outline
-         #draw.rectangle((minHistLenght, maxHistHeight, maxHistLenght, minHistHeight), outline="white")
-         #draw.rectangle((110, minBarHeight, 124, maxBarHeight), outline="white")
-         #draw.rectangle((104, minBarHeight, 110, minBarHeight + 8), fill="white")
-
-        
-
-       
 
         # System Uptime
         draw.text((3, 2), "Uptime: " + str(sysUptime)[:7], fill="white")
@@ -139,7 +126,7 @@ def main(device, histogramData, histogramTime):
         else:
             draw.rectangle((110, minBarHeight, 124, maxBarHeight), outline="white")
             if blnk == 1:
-                draw.rectangle((112, minBarHeight, 122, maxBarHeight), fill="gray")
+                draw.rectangle((112, minBarHeight, 122, maxBarHeight), fill="white")
                 draw.rectangle((110, minBarHeight, 124, minBarHeight + 10), fill="white")
                 draw.text((112, minBarHeight), str(tmpCel), fill="black")
                 blnk = 0
