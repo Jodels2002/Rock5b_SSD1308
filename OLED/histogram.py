@@ -120,9 +120,9 @@ def main(device, histogramData, histogramTime):
         if height > minBarHeight:
             draw.rectangle((112, height, 120, maxBarHeight), fill="white")
             draw.rectangle((112, height, 120, height + 10), fill="black")
-            draw.text((112, height), str(tmpCel), fill="white")
+            draw.text((110, height), str(tmpCel), fill="white")
             # Thermometer outline and legend
-            draw.text((124, height ), 'C', fill="white")
+            draw.text((122, height ), 'C', fill="white")
         else:
             draw.rectangle((110, minBarHeight, 124, maxBarHeight), outline="white")
             if blnk == 1:
