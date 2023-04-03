@@ -38,24 +38,6 @@ REFRESH_INTERVAL = 1
 blnk = 1
 
 
-def init_histogram():
-    # HistogramSettings
-    histogramResolution = 100
-    histogramTime = []
-    histogramData = []
-    x = 106
-    # Filling up the arrays for the histogram
-    for pix in range(0, histogramResolution):
-        x -= 2
-        if x > 2:
-            histogramTime.append(x)
-
-    for timeLen in range(0, len(histogramTime)):
-        histogramData.append(60)
-
-    return histogramData, histogramTime
-
-
 def main(device, histogramData, histogramTime):
     # Importing some global vars
     global blnk
@@ -102,12 +84,12 @@ def main(device, histogramData, histogramTime):
         # Print
         # Drawing the outlines and legends:
         # Main Outline
-        #draw.rectangle(device.bounding_box, outline="white")
+        # draw.rectangle(device.bounding_box, outline="white")
 
         # Histogram Outline
-        #draw.rectangle((minHistLenght, maxHistHeight, maxHistLenght, minHistHeight), outline="white")
-        #draw.rectangle((110, minBarHeight, 124, maxBarHeight), outline="white")
-        #draw.rectangle((104, minBarHeight, 110, minBarHeight + 8), fill="white")
+         #draw.rectangle((minHistLenght, maxHistHeight, maxHistLenght, minHistHeight), outline="white")
+         #draw.rectangle((110, minBarHeight, 124, maxBarHeight), outline="white")
+         #draw.rectangle((104, minBarHeight, 110, minBarHeight + 8), fill="white")
 
         # Thermometer outline and legend
         draw.text((105, minBarHeight - 1), 'C', fill="black")
@@ -120,14 +102,14 @@ def main(device, histogramData, histogramTime):
         draw.text((3, 2), "Uptime: " + str(sysUptime)[:7], fill="white")
 
         # RAM usage bar
-        #if ramBarWidth < maxRamBarW:
-            #draw.rectangle((minRamBarW, minRamBarH, ramBarWidth, maxRamBarH), fill="white")
-            #if ramUsd < 100:
-                #draw.text((ramBarWidth - 11, minRamBarH), str(ramUsd), fill="black")
-            #else:
-                #draw.text((ramBarWidth - 17, minRamBarH), str(ramUsd), fill="black")
-        #else:
-            #draw.rectangle((minRamBarW, minRamBarH, maxRamBarW, maxRamBarH), fill="red")
+        if ramBarWidth < maxRamBarW:
+            draw.rectangle((minRamBarW, minRamBarH, ramBarWidth, maxRamBarH), fill="white")
+            if ramUsd < 100:
+                draw.text((ramBarWidth - 11, minRamBarH), str(ramUsd), fill="black")
+            else:
+                draw.text((ramBarWidth - 17, minRamBarH), str(ramUsd), fill="black")
+        else:
+            draw.rectangle((minRamBarW, minRamBarH, maxRamBarW, maxRamBarH), fill="red")
 
         # Historgram
         histogramData.insert(0, histogramHeight)
@@ -146,10 +128,9 @@ def main(device, histogramData, histogramTime):
 
         # CPU Temperature
         if height > minBarHeight:
-            #draw.rectangle((112, height, 122, maxBarHeight), fill="white")
-            #draw.rectangle((110, height, 124, height + 10), fill="white")
-            draw.text((112, height), str(tmpCel), fill="white")
-            draw.text((118, height), "C", fill="white")
+             #draw.rectangle((112, height, 122, maxBarHeight), fill="white")
+            draw.rectangle((110, height, 124, height + 10), fill="white")
+            draw.text((112, height), str(tmpCel), fill="black")
         else:
             draw.rectangle((110, minBarHeight, 124, maxBarHeight), outline="white")
             if blnk == 1:
