@@ -67,15 +67,15 @@ def stats(device):
  
     with canvas(device) as draw:
 		 # Icon CPU
-        draw.text((15, 3), cpu_usage(), font=font2, fill="white")
-        draw.text((5, 0), chr(61444), font=font1, fill="white")
+        draw.text((18, 3), cpu_usage(), font=font2, fill="white")
+        draw.text((8, 0), chr(61444), font=font1, fill="white")
         if device.height >= 32:
 			# Icon memory
-            draw.text((25, 26), mem_usage(), font=font2, fill="white")
-            draw.text((5, 22), chr(62171), font=font1, fill="white")
+            draw.text((28, 26), mem_usage(), font=font2, fill="white")
+            draw.text((8, 22), chr(62171), font=font1, fill="white")
             # Icon disk
-            draw.text((25, 48), disk_usage('/'), font=font2, fill="white")
-            draw.text((5, 44), chr(61600), font=font1, fill="white")
+            draw.text((28, 48), disk_usage('/'), font=font2, fill="white")
+            draw.text((8, 44), chr(61600), font=font1, fill="white")
         
             
         if device.height >= 128:
