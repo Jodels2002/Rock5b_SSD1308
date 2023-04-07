@@ -115,7 +115,7 @@ def main(device, histogramData, histogramTime):
                 draw.line((histogramTime[timePlusOne], histogramData[timePlusOne], histogramTime[htime], histogramData[htime]), fill="orange")
 
         histogramData.pop(len(histogramTime) - 1)
-        draw.text((minHistLenght + 2, maxHistHeight - 12), "{0:.2f}".format(cpuLoad[0]) + "  CPU Load", fill="white")
+        draw.text((minHistLenght + 2, maxHistHeight - 12), " {0:.2f}".format(cpuLoad[0]) + "  CPU Load", fill="white")
         # CPU Temperature
         if height > minBarHeight:
             draw.rectangle((112, height, 120, maxBarHeight), fill="white")
