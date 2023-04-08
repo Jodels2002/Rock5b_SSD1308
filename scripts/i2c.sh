@@ -128,9 +128,11 @@ fi
 
 if [  -d /home/amiga/ ]; then
     sudo adduser amiga i2c
-    # echo 'amiga ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers
+    # sudo echo pi ALL=(ALL) NOPASSWD:ALL' > /etc/sudoers
 fi    
-   sudo adduser root i2c
+  sudo adduser rock i2c
+  sudo adduser pi i2c
+  sudo adduser $USER i2c
 
 
        if [ ! -f /opt/OLED/fonts/code1000.ttf ]; then 
