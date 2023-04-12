@@ -3,7 +3,7 @@ OLED SSD1308 for the Radxa Rock5B
 
 Prerequisite:
 
-Tested on Armbian. -> Please see:  https://www.armbian.com/rock-5b/
+Armbian. -> Please see:  https://www.armbian.com/rock-5b/
 
 
 SSD 1306 i2C Oled Display 128*64
