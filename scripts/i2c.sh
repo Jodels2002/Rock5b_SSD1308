@@ -11,6 +11,8 @@ GREY='\033[1;30m'
 
    sudo apt update -y
    sudp apt upgrade -y
+   sudo chmod -R 777 /usr/local/bin
+   sudo chmod -R 777 /opt
  if [  -f /boot/config.txt  ]; then  
    export DISTRO=focal-stable
    wget -O - apt.radxa.com/$DISTRO/public.key | sudo apt-key add -
@@ -45,9 +47,9 @@ fi
     sudo rm /boot/config.txt
     sudo cp -rf /home/armbianEnv.txt   /boot/
     #sudo rm /home/armbianEnv.txt
-    echo "overlays=rk3588-i2c0-m1 added to config.txt "
+    echo "overlays=rk3588-i2c0-m1 added to armbianEnv.txt "
    else
- echo "overlays=rk3588-i2c0-m1 found in config.txt :-) "
+ echo "overlays=rk3588-i2c0-m1 found in armbianEnv.txt :-) "
    fi
      fi
 
@@ -68,8 +70,7 @@ fi
 
       sudo cp -f -R ~/Rock5b_SSD1308/scripts/* /usr/local/bin
       sudo cp -f -R ~/Rock5b_SSD1308/ /opt
-      sudo chmod -R 775 /usr/local/bin
-      sudo chmod -R 775 /opt/
+    
 
  clear 
 if [ ! -f /opt/OLED/images/banana.gif ]; then
@@ -157,8 +158,7 @@ fi
        sudo cp -rf /opt/OLED/fonts/* /usr/share/fonts/truetype/
     fi
    
-  sudo chmod -R 775 /usr/local/bin
-  sudo chmod -R 775 /opt/
+ 
   
   sudo rm -rf ~/Rock5b_SSD1308
   sudo rm -rf ~/luma.examples
