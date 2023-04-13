@@ -89,7 +89,7 @@ fi
       echo -e "$GREY " 
       sudo apt install -y python3-dev python3-pip 
       sudo apt install -y libfreetype6-dev libjpeg-dev build-essential
-      sudo apt install -y libsdl1.2-compat-dev  libportmidi-dev libsdl-ttf2.0-dev libsdl-mixer1.2-dev libsdl-image1.2-dev python3-dev
+      #sudo apt install -y libsdl1.2-compat-dev  libportmidi-dev libsdl-ttf2.0-dev libsdl-mixer1.2-dev libsdl-image1.2-dev python3-dev
       clear
       toilet "Rock5b OLED" --metal
       echo " "
@@ -108,7 +108,7 @@ fi
       echo " "
       echo -e "$BLUE "
       echo "installing  Luma.Core ... "
-        sudo pip install --upgrade luma.core
+        sudo python3 -m pip install -U  luma.core
       clear
       toilet "Rock5b OLED" --metal
       echo " "
