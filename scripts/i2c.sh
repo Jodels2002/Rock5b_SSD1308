@@ -10,7 +10,7 @@ RED='\033[1;31m'
 GREY='\033[1;30m'
 
    sudo apt update -y
-   sudp apt upgrade -y
+   sudo apt upgrade -y
    sudo chmod -R 777 /usr/local/bin
    sudo chmod -R 777 /opt
  if [  -f /boot/config.txt  ]; then  
